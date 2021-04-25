@@ -1,0 +1,17 @@
+{% comment %} Inventory tracking on product page {% endcomment %}
+        
+            <div id="variant-inventory" class="{% unless current_variant.available %} hide {% endunless %}">
+              
+              {% if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" %}
+                            
+              <div>
+                <div class="Polaris-ProgressBar Polaris-ProgressBar--sizeMedium"><progress class="Polaris-ProgressBar__Progress" value="{{ current_variant.inventory_quantity }}" max="72"></progress>
+                  <div class="Polaris-ProgressBar__Indicator" style="width: 75%;"><span class="Polaris-ProgressBar__Label">{{ current_variant.inventory_quantity }} seats remaining.</span></div>
+                </div>
+                <div id="PolarisPortalsContainer"></div>
+              </div>
+              
+        
+              
+              {% endif %}
+            </div>
